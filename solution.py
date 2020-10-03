@@ -62,6 +62,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     subject = "Subject: Testing subject\r\n\r\n"
     clientSocket.send(subject.encode())
     clientSocket.send(msg.encode())
+    clientSocket.send(endmsg.encode())
     recv5 = clientSocket.recv(1024).decode()
     #print(recv5)
     #if recv5[:3] != '250':
